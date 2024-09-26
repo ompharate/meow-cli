@@ -14,8 +14,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.658.1",
+    "aws-sdk": "^2.1691.0",
     "axios": "^1.7.7",
     "chalk": "^5.3.0",
-    "commander": "^12.1.0"
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5"
   }
 }
