@@ -1,27 +1,22 @@
+#!/usr/bin/env node
 import { program } from "commander";
 import { pushToMeowForge } from "../lib/util.js";
-
+import chalk from "chalk";
 import dotenv from "dotenv";
 dotenv.config();
 
+program
+  .command("push <repoName> <passkey> <startPath>")
+  .description(
+    "Push data to the repository with the provided repo name, passkey, and start path"
+  )
+  .action(async (repoName, passkey, startPath) => {
+    if (!repoName || !passkey || !startPath) {
+      console.log(chalk.red("Please provide all three arguments for push."));
+      process.exit(1);
+    }
 
-program.option(
-  "-p, --push <values...>",
-  "Push data to the repository with the provided repo name, passkey, and start path"
-);
+    await pushToMeowForge(repoName, passkey, startPath);
+  });
 
 program.parse(process.argv);
-const options = program.opts();
-
-if (options.push && options.push.length === 3) {
-  const [repoName, passkey, startPath] = options.push;
-
-  if (!repoName || !passkey || !startPath) {
-    console.log("Please provide all three arguments for --push.");
-    process.exit(1);
-  }
-
-  pushToMeowForge(repoName, passkey, startPath);
-} else {
-  console.log("Please provide all three arguments for --push.");
-}
