@@ -1,6 +1,6 @@
 {
   "name": "meow-hub-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "./bin/index.js",
   "bin": {
     "meow": "./bin/index.js"
@@ -15,7 +15,7 @@
     "aws",
     "s3"
   ],
-  "author": "Om pharate",
+  "author": "Om Pharate",
   "license": "ISC",
   "description": "A CLI tool for pushing files to AWS S3",
   "dependencies": {
@@ -25,7 +25,8 @@
     "chalk": "^5.3.0",
     "commander": "^12.1.0",
     "dotenv": "^16.4.5",
-    "meow-cli": "^1.0.0"
+    "meow-cli": "^1.0.0",
+    "ora": "^8.1.0"
   },
   "devDependencies": {
     "eslint": "^8.38.0",
