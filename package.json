@@ -1,6 +1,6 @@
 {
   "name": "meow-hub-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "./bin/index.js",
   "bin": {
     "meow": "./bin/index.js"
